@@ -1,0 +1,18 @@
+FROM node:14.18-buster-slim
+
+WORKDIR /work
+
+RUN apt update
+RUN apt-get install sudo
+RUN yes | sudo apt install curl
+RUN curl -L -o elm.gz https://github.com/elm/compiler/releases/download/0.19.1/binary-for-linux-64-bit.gz
+RUN gunzip elm.gz
+RUN chmod +x elm
+RUN sudo mv elm /usr/local/bin/
+
+ENV PATH $PATH:/usr/local/bin
+
+RUN npm install --save elm elm-live
+# RUN npm install --save-dev elm elm-format
+
+CMD /work/node_modules/.bin/elm-live /work/portfolio/src/Main.elm --start-page=index.html --host=0.0.0.0 -- --output=elm.js
