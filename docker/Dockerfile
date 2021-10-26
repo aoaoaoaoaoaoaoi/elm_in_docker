@@ -14,6 +14,8 @@ ENV PATH $PATH:/usr/local/bin
 
 RUN npm install --save elm elm-live
 RUN sed -i -e "s/\(ignoreInitial: true,\)/\1\n    usePolling: true, /g" /work/node_modules/elm-live/lib/src/watch.js
-# RUN npm install --save-dev elm elm-format
+
+RUN npm install -save elm-format
+ENV PATH $PATH:/work/node_modules/elm-format/bin/
 
 CMD /work/node_modules/.bin/elm-live /work/portfolio/src/Main.elm --start-page=index.html --host=0.0.0.0 -- --output=elm.js
