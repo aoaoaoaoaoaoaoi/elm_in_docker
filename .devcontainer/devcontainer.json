@@ -4,5 +4,13 @@
 		"docker-compose.yml"
 	],
 	"service": "app",
-	"workspaceFolder": "../"
+	"workspaceFolder": "/work",
+	"extensions": [
+		"Elmtooling.elm-ls-vscode"
+	],
+	"settings": {
+		"[elm]": {
+			"editor.formatOnSave": true
+		}
+	}
 }
