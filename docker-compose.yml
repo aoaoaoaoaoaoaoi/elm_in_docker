@@ -1,0 +1,19 @@
+version: '3.9'
+services:
+  app:
+
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+
+    init: true
+    
+    volumes:
+      - ./work:/work
+      - /work/node_modules
+
+    working_dir: /work/portfolio
+
+    ports: 
+      - "8000:8000"
+ 
