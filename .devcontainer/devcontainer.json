@@ -1,0 +1,17 @@
+{
+	"name": "Existing Docker Compose (Extend)",
+	"dockerComposeFile": [
+		"../docker-compose.yml"
+	],
+	"service": "app",
+	"workspaceFolder": "/work",
+	"extensions": [
+		"Elmtooling.elm-ls-vscode"
+	],
+	"settings": {
+		"[elm]": {
+			"editor.formatOnSave": true
+		},
+		"elmLS.elmFormatPath": "/work/node_modules/elm-format/bin/"
+	}
+}
