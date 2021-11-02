@@ -10,8 +10,6 @@ services:
       - ./work:/work
       - /work/node_modules
 
-    working_dir: /work/portfolio
-
     ports: 
       - "8000:8000"
  
